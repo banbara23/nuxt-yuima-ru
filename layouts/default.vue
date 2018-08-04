@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -26,13 +26,13 @@
     </v-navigation-drawer>
     <v-toolbar fixed app :clipped-left="clipped">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-      <v-btn
+      <!-- <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
       >
         <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
-      </v-btn>
-      <v-btn
+      </v-btn> -->
+      <!-- <v-btn
         icon
         @click.stop="clipped = !clipped"
       >
@@ -43,15 +43,15 @@
         @click.stop="fixed = !fixed"
       >
         <v-icon>remove</v-icon>
-      </v-btn>
+      </v-btn> -->
       <v-toolbar-title v-text="title"></v-toolbar-title>
-      <v-spacer></v-spacer>
+      <!-- <v-spacer></v-spacer>
       <v-btn
         icon
         @click.stop="rightDrawer = !rightDrawer"
       >
         <v-icon>menu</v-icon>
-      </v-btn>
+      </v-btn> -->
     </v-toolbar>
     <v-content>
       <v-container>
@@ -80,21 +80,22 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        clipped: false,
-        drawer: true,
-        fixed: false,
-        items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
-        ],
-        miniVariant: false,
-        right: true,
-        rightDrawer: false,
-        title: 'Vuetify.js'
-      }
-    }
+export default {
+  data() {
+    return {
+      clipped: false,
+      drawer: true,
+      fixed: false,
+      items: [
+        { icon: "home", title: "Welcome", to: "/" },
+        { icon: "edit", title: "Schedule", to: "/schedule" },
+        { icon: "perm_identity", title: "Member", to: "/member" }
+      ],
+      miniVariant: false,
+      right: false,
+      rightDrawer: false,
+      title: "ゆいま〜る"
+    };
   }
+};
 </script>
